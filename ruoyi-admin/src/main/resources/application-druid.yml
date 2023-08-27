@@ -8,7 +8,10 @@ spring:
             master:
                 url: jdbc:mysql://localhost:3306/javary?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                 username: root
+                # 本地root密码
                 password: admin123
+                # 线上root密码
+                #password: dcce377d209680c3
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭
