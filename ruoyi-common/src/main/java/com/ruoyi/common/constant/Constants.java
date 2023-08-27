@@ -1,5 +1,7 @@
 package com.ruoyi.common.constant;
 
+import io.jsonwebtoken.Claims;
+
 /**
  * 通用常量信息
  * 
@@ -16,6 +18,11 @@ public class Constants
      * GBK 字符集
      */
     public static final String GBK = "GBK";
+
+    /**
+     * www主域
+     */
+    public static final String WWW = "www.";
 
     /**
      * http请求
@@ -56,31 +63,51 @@ public class Constants
      * 登录失败
      */
     public static final String LOGIN_FAIL = "Error";
+ 
+    /**
+     * 验证码有效期（分钟）
+     */
+    public static final Integer CAPTCHA_EXPIRATION = 2;
 
     /**
-     * 系统用户授权缓存
+     * 令牌
      */
-    public static final String SYS_AUTH_CACHE = "sys-authCache";
+    public static final String TOKEN = "token";
 
     /**
-     * 参数管理 cache name
+     * 令牌前缀
      */
-    public static final String SYS_CONFIG_CACHE = "sys-config";
+    public static final String TOKEN_PREFIX = "Bearer ";
 
     /**
-     * 参数管理 cache key
+     * 令牌前缀
      */
-    public static final String SYS_CONFIG_KEY = "sys_config:";
+    public static final String LOGIN_USER_KEY = "login_user_key";
 
     /**
-     * 字典管理 cache name
+     * 用户ID
      */
-    public static final String SYS_DICT_CACHE = "sys-dict";
+    public static final String JWT_USERID = "userid";
 
     /**
-     * 字典管理 cache key
+     * 用户名称
      */
-    public static final String SYS_DICT_KEY = "sys_dict:";
+    public static final String JWT_USERNAME = Claims.SUBJECT;
+
+    /**
+     * 用户头像
+     */
+    public static final String JWT_AVATAR = "avatar";
+
+    /**
+     * 创建时间
+     */
+    public static final String JWT_CREATED = "created";
+
+    /**
+     * 用户权限
+     */
+    public static final String JWT_AUTHORITIES = "authorities";
 
     /**
      * 资源映射路径 前缀
@@ -101,6 +128,11 @@ public class Constants
      * LDAPS 远程方法调用
      */
     public static final String LOOKUP_LDAPS = "ldaps:";
+
+    /**
+     * 自动识别json对象白名单配置（仅允许解析的包名，范围越小越安全）
+     */
+    public static final String[] JSON_WHITELIST_STR = { "org.springframework", "com.ruoyi" };
 
     /**
      * 定时任务白名单配置（仅允许访问的包名，如其他需要可以自行添加）
